@@ -3,589 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Search Website</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="shortcut icon" href="/OIG.Ej_ins.jpg">
-
-    <!-- Custom CSS -->
-   <style>
-
-
-        *{
-
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-        }
-
-        /* Custom CSS for carousel caption */
-
-        .carousel-caption {
-            background-color: rgba(246, 240, 240, 0.7); /* Adjust the last value (0.7) to control transparency */
-            color: rgb(20, 3, 3); /* Text color */
-            padding-right: 50px; /* Padding for the details */
-            text-align: center; /* Center-align text */
-        }
-        .carousel-item {
-            opacity: 0.7; /* Adjust the opacity value (0.7 for 70% transparency) */
-            transition: opacity 0.5s ease; /* Add a smooth transition effect */
-        }
-
-        /* Restore full opacity on hover (optional) */
-        .carousel-item:hover {
-            opacity: 1;
-        }
-
-        h1 {
-            font-size: 36px;
-            color: #FF5733; /* Custom text color */
-            text-align: center;
-        }
-
-        /* Customize the H2 heading for Season 2 */
-        h2 {
-            font-size: 24px;
-            color: #4CAF50; /* Custom text color */
-            text-align: center;
-        }
-
-        /* Customize the paragraph text */
-        p {
-            font-size: 18px;
-            color: white; /* Custom text color */
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        /* Adjust carousel images for responsiveness */
-        .carousel-item img {
-            max-width: 100%;
-            height: auto;
-        }
-        .carousel-control-prev,
-        .carousel-control-next {
-            border: 2px solid #FFFFFF; /* Add border to the arrows */
-            border-radius: 50%; /* Make the arrows circular */
-            width: 40px; /* Adjust the width of the arrows */
-            height: 40px; /* Adjust the height of the arrows */
-            background-color: black;
-            position: absolute;
-            top: 50%; /* Center vertically */
-            transform: translateY(-50%)
-            /* Semi-transparent background */
-
-        }
-
-        /* Customize the arrow icons */
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            color: #FFFFFF; /* Arrow icon color */
-        }
-        .card-img-top {
-        max-width: 100%;
-        height: auto;
-    }
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-
-:root{
-
-    --light-dark-color: #f70808;
-    --yellow-color: #edbd0e;
-}
-*{
-    padding: 0;
-    margin: 0;
-
-}
-
-a{
-    text-decoration: absolutely;
-}
-img{
-    width: 100%;
-    display: block;
-}
-.wrapper{
-    min-height: 100vh;
-    background-color: var(--dark-color);
-}
-.wrapper .container{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-}
-.search-container{
-    background-color: var(--md-dark-color);
-    height: 180px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-}
-.logo{
-    padding: 1rem 0;
-    border-bottom: 2px solid var(--light-dark-color);
-}
-.logo p{
-    font-size: 2rem;
-    color: #f40a0a;
-    font-weight: bold;
-}
-.logo p span{
-    color: var(--yellow-color);
-}
-.search-element{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: stretch;
-        -ms-flex-align: stretch;
-            align-items: stretch;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    position: left;
-}
-.search-element h3{
-    -ms-flex-item-align: center;
-        align-self: center;
-    margin-right: 1rem;
-    font-size: 2rem;
-    color: #fff;
-    font-weight: 500;
-
-}
-.search-element .form-control{
-    padding: 1rem 2rem;
-    font-size: 1.4rem;
-    border: none;
-    border-top-left-radius: 1px;
-    border-bottom-left-radius: none;
-    outline: none;
-    color: var(--light-dark-color);
-    width: 350px;
-}
-.search-list{
-    position: absolute;
-    right: 90;
-    top: 100%;
-    max-height: 500px;
-    overflow-y: scroll;
-    z-index: 10;
-}
-.search-list .search-list-item{
-    background-color: var(--light-dark-color);
-    padding: 0.5rem;
-    border-bottom: 1px solid var(--dark-color);
-    width: calc(350px - 8px);
-    color: #fff;
-    cursor: pointer;
-    -webkit-transition: background-color 200ms ease;
-    -o-transition: background-color 200ms ease;
-    transition: background-color 200ms ease;
-}
-.search-list .search-list-item:Hover{
-    background-color: #5e05ed;
-}
-.search-list-item{
-
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-}
-.search-item-thumbnail img{
-    width: 80px;
-    margin-left: 1rem;
-}
-.search-item-info h3{
-    font-weight: 600;
-    font-size: 1rem;
-}
-.search-item-info p{
-    font-size: 1rem;
-
-    font-weight: 600;
-    opacity: 1;
-}
-
-/* thumbnail */
-.search-list::-webkit-scrollbar{
-    width: 12px;
-}
-.search-list::-webkit-scrollbar-track{
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-            box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
-}
-.search-list::-webkit-scrollbar-thumb{
-    background-color: var(--yellow-color);
-    outline: none;
-    border-radius: 10px;
-}
-
-/* js related class */
-.hide-search-list{
-    display: none;
-}
-
-/* movie result */
-.result-container{
-    padding: 5rem 0;
-}
-.movie-poster img{
-    max-width: 300px;
-    margin: 1rem 0;
-    border: 4px solid #fff;
-}
-.movie-info{
-    text-align: center;
-    color: #1b0202;
-    padding-top: 3rem;
-}
-
-/* movie info stylings */
-.movie-title{
-    font-size: 2rem;
-    color: var(--yellow-color);
-
-}
-.movie-misc-info{
-    list-style-type: none;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: left;
-    padding: 2rem;
-}
-.movie-info .year{
-    font-weight: 500;
-}
-.movie-info .rated{
-    background-color: var(--yellow-color);
-    padding: 0.4rem;
-    margin: 0 0.4rem;
-    border-radius: 3px;
-    font-weight: 600;
-}
-.movie-info .released{
-    font-size: 0.9rem;
-    opacity: 0.9;
-}
-.movie-info .writer{
-    padding: 0.5rem;
-    margin: 1rem 0;
-}
-.movie-info .genre{
-    background-color: var(--light-dark-color);
-    display: inline-block;
-    padding: 0.5rem;
-    border-radius: 3px;
-}
-.movie-info .plot{
-    max-width: 400px;
-    margin: 1rem auto;
-}
-.movie-info .language{
-    color: var(--yellow-color);
-    font-style: italic;
-}
-.movie-info .awards{
-    font-weight: 300;
-    font-size: 0.9rem;
-}
-.movie-info .awards i{
-    color: var(--yellow-color);
-    margin: 1rem 0.7rem 0 0;
-}
-
-@media(max-width: 450px){
-    .logo p{
-        font-size: 1.4rem;
-    }
-    .search-element .form-control{
-        width: 90%;
-        margin: 0 auto;
-        padding: 0.5rem 1rem;
-    }
-    .search-element h3{
-        font-size: 1.4rem;
-    }
-    .search-list{
-        width: 90%;
-        right: 50%;
-        -webkit-transform: translateX(50%);
-            -ms-transform: translateX(50%);
-                transform: translateX(50%);
-    }
-    .search-list .search-list-item{
-        width: 100%;
-        height: auto;
-    }
-    .movie-misc-info{
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column;
-    }
-    .movie-misc-info li:nth-child(2){
-        margin: 0.8rem 0;
-    }
-}
-
-@media(min-width: 800px){
-    .search-element{
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-            -ms-flex-direction: row;
-                flex-direction: row;
-    }
-    .search-element h3{
-        margin-bottom: 0;
-    }
-    .result-grid{
-        display: grid hover ;
-        grid-template-columns: repeat(2, 1fr);
-    }
-    .movie-info{
-        text-align: left;
-        padding-top: 0;
-    }
-    .movie-info .movie-misc-info{
-        -webkit-box-pack: start;
-            -ms-flex-pack: start;
-                justify-content: flex-start;
-        padding-left: 0;
-    }
-    .movie-info .plot{
-        margin-left: 0;
-    }
-    .movie-info .writer{
-        padding-left: 0;
-        margin-left: 0;
-    }
-}
-
-    @media (max-width: 767px) { /* Add styles for screens smaller than 768px (typical mobile devices) */
-        .card-img-top {
-            max-width: 50%; /* Adjust the image width for mobile devices */
-            height: auto;
-        }
-    }
-    body {
-            background-image: url('https://aniwatch.to/images/anw-min.webp');
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center center;
-            background-color: #faf5f5;
-            color: white;
-        }
-
-        /* Header Styles */
-
-
-        header .container {
-            max-width: 960px;
-            margin: 0 auto;
-        }
-
-        header h1 {
-            margin: 0;
-        }
-        .navbar {
-        background-color: rgba(0, 0, 0, 0); /* Change the background color of the navbar here */
-    }
-
-
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        nav li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: white;
-        }
-
-        /* Add an overlay with reduced opacity for better text contrast */
-        body::after {
-            content: "";
-            background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity as needed */
-            position: fixed;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            z-index: -1; /* Place the overlay behind other content */
-        }
+    <title>Chatbot</title>
+    <style>
         body {
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position: center center;
-            background-color: #000;
-            color: white;
-            transition: background-image 2s ease-in-out; /* Add transition for smooth image change */
+            font-family: Arial, sans-serif;
+            background-color: #ECE5DD;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
         }
-
-
-</style>
-
+        .chat-container {
+            border: 1px solid #B2AFAF;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            max-width: 500px;
+            background-color: #FFFFFF;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .welcome-message {
+            margin-bottom: auto;
+        }
+        .chat-box {
+            overflow-y: scroll;
+            max-height: 300px;
+            border: 2px solid #B2AFAF;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: #ECE5DD;
+        }
+        .user-message {
+            background-color: #DCF8C6;
+            border-radius: 18px;
+            padding: 10px;
+            margin: 5px;
+            text-align: right;
+        }
+        .bot-message {
+            background-color: #FFFFFF;
+            border-radius: 18px;
+            padding: 5px 10px;
+            margin: 5px;
+        }
+        .input-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        input[type="text"] {
+            flex-grow: 1;
+            padding: 10px;
+            margin-right: 10px;
+            box-sizing: border;
+            border-radius: 5px;
+            border: 2px solid #B2AFAF;
+        }
+        button {
+            padding: 10px;
+            box-sizing: border-box;
+            border-radius: 5px;
+            border: none;
+            background-color: #34B7F1;
+            color: white;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
-
-    <nav class="navbar navbar-dark bg-primary">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="">Dramas<span>ongoing.</span></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="\\animelist.html">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="movie.html">Anime</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="animelist.html">Myanimelist</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="AnimeQuote.html">AnimeQuote Generator</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="about.html">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">Chatbot movie</a>
-                    </li>
-                </ul>
-                <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="movie-search-box" onkeyup="findMovies()" onclick="findMovies()">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-
-
-                </form>
-            </div>
+    <div class="chat-container">
+        <div class="welcome-message">
+            <div class="chat-bubble bot">Welcome to Movie Chatbot! Ask me about a movie </div>
         </div>
-    </nav>
-
-    <form class="d-flex">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="movie-search-box" onkeyup="findMovies()" onclick="findMovies()">
-                    <button class="btn btn-outline-success" type="submit">Search</button>
-
-
-                </form>
-
-    <div class="wrapper">
-        <!-- logo -->
-        <div class="logo">
-            <div class="container">
-                <p>Drama<span>go.</span></p>
-            </div>
+        <div class="chat-box" id="chat-box"></div>
+        <div class="input-container">
+            <input type="text" id="user-input" placeholder="Type here...">
+            <button onclick="sendMessage()">Send</button>
         </div>
-        <!-- end of logo -->
-        <div class="search-list" id="search-list">
-                </div>
-
- <div class="container mt-5">
-        <div id="movieDetailsContainer"></div>
-    </div>
-        <!-- result container -->
-        <div class="container">
-            <div class="result-container">
-                <div class="result-grid" id="result-grid">
-                    <!-- movie information here -->
-                </div>
-            </div>
-        </div>
-        <!-- end of result container -->
     </div>
 
+    <script>
+        function sendMessage() {
+            var userInput = document.getElementById("user-input").value;
+            var chatBox = document.getElementById("chat-box");
 
+            // Display user message
+            var userMessage = document.createElement("div");
+            userMessage.className = "chat-bubble user-message";
+            userMessage.textContent = "You: " + userInput;
+            chatBox.appendChild(userMessage);
 
-    <!-- Bootstrap Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- Custom JavaScript -->
+            // Send user input to server (Flask)
+            fetch('/search', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                },
+                body: 'user_input=' + userInput,
+            })
+            .then(response => response.text())
+            .then(data => {
+                // Display bot response
+                var botMessage = document.createElement("div");
+                botMessage.className = "chat-bubble bot-message";
+                botMessage.innerHTML = "AjmovieWorld: " + data;
+                chatBox.appendChild(botMessage);
+            });
 
-
-
-    <script src="/static/index.js"></script>
-    <!-- Footer -->
-    <footer class="bg-light text-center text-lg-start">
-        <div class="container p-4">
-            <div class="row">
-                <div class="col-lg-6 col-md-12 mb-4 mb-md-0">
-<script>
-    // An array of background image URLs
-    const backgroundImages = [
-    'https://t3.ftcdn.net/jpg/03/08/13/12/360_F_308131267_unLRF2JmPsjjXgrMRaFA3aEnrKa9aUxK.jpg',
-        'https://images5.alphacoders.com/131/1316260.jpg',
-        'https://images7.alphacoders.com/611/thumbbig-611138.webp',
-        'https://images4.alphacoders.com/641/thumbbig-641968.webp',
-        'https://images2.alphacoders.com/742/thumbbig-742320.webp',
-        'https://images.alphacoders.com/111/1116236.jpg',
-        'https://images3.alphacoders.com/127/1277277.jpg',
-        'https://avatarfiles.alphacoders.com/365/365184.jpg',
-        'https://images.alphacoders.com/132/1326370.png',
-
-        // Add more image URLs as needed
-    ];
-
-    let currentIndex = 0;
-
-    // Function to change the background image for both body and footer
-    function changeBackgroundImage() {
-        currentIndex = (currentIndex + 1) % backgroundImages.length;
-        const imageUrl = backgroundImages[currentIndex];
-        document.body.style.backgroundImage = `url('${imageUrl}')`;
-        document.querySelector('.footer').style.backgroundImage = `url('${imageUrl}')`;
-    }
-
-    // Call the function to start changing the background image every 2 seconds
-    setInterval(changeBackgroundImage, 4000);
-</script>
-
-                </div>
-            </div>
-        </div>
-
-
-
-        <!-- Copyright -->
-        <div class="text-center p-3 text-light" style="background-color: rgba(9, 0, 0, 0.997);">
-            © 2024 Copyright:
-
-            <a class="text-light" href="animelist.html">DramasOngoing.com</a>
-        </div>
-        <!-- Copyright -->
-    </footer>
-    <!-- Footer -->
-
+            // Clear user input field
+            document.getElementById("user-input").value = "";
+        }
+    </script>
 </body>
-
-
 </html>
