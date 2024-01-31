@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Movies, Dramas, Anime, and Vision</title>
+<style>
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Responsive Design */
+@media only screen and (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+/* Dynamic CSS */
+/* Movies Section */
+.movies-section, .dramas-section, .anime-section, .vision-section {
+    background-color: #e8e8f0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.movies-section h2, .dramas-section h2, .anime-section h2, .vision-section h2 {
+    color: #181717;
+}
+
+/* Hover Effect for Text Pop */
+.hover-pop {
+    position: relative;
+}
+
+.hover-pop:hover::before {
+    content: attr(data-hover);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 8px 12px;
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.hover-pop:hover::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 8px solid transparent;
+    border-bottom-color: #f7ecec;
+}
+
+.hover-pop:hover::before, .hover-pop:hover::after {
+    opacity: 1;
+}
+
+/* Vision Section */
+.vision-section {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.vision-section h2 {
+    color: #ecdbdb;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <!-- Movies Section -->
+    <div class="movies-section">
+        <h2>Movies</h2>
+        <p>Movies are a form of visual storytelling, typically with a runtime of around 90 to 180 minutes. They entertain audiences with captivating narratives, compelling characters, and immersive experiences. Movies cover various genres, including:</p>
+        <ul>
+            <li class="hover-pop" data-hover="Featuring thrilling sequences, combat scenes, and adventurous plots.">Action</li>
+            <li class="hover-pop" data-hover="Focusing on love stories, relationships, and emotional connections.">Romance</li>
+            <li class="hover-pop" data-hover="Providing laughter and humor through amusing situations and witty dialogues.">Comedy</li>
+            <li class="hover-pop" data-hover="Evoking fear and suspense with terrifying scenarios and supernatural elements.">Horror</li>
+            <li class="hover-pop" data-hover="Exploring complex human emotions, conflicts, and interpersonal relationships.">Drama</li>
+            <li class="hover-pop" data-hover="Transporting audiences to imaginative worlds with futuristic or magical elements.">Sci-Fi/Fantasy</li>
+        </ul>
+    </div>
+
+    <!-- Dramas Section -->
+    <div class="dramas-section">
+        <h2>Dramas</h2>
+        <p>Dramas are narrative works that delve into the emotional, psychological, and interpersonal aspects of human life. They often explore themes such as:</p>
+        <ul>
+            <li class="hover-pop" data-hover="Examining romantic connections, friendships, and familial bonds.">Love and Relationships</li>
+            <li class="hover-pop" data-hover="Reflecting on personal growth, struggles, and self-awareness.">Identity and Self-Discovery</li>
+            <li class="hover-pop" data-hover="Addressing societal challenges, injustices, and cultural norms.">Social Issues</li>
+            <li class="hover-pop" data-hover="Presenting ethical quandaries and moral complexities for characters to navigate.">Moral Dilemmas</li>
+            <li class="hover-pop" data-hover="Depicting significant moments in history and their impact on individuals and communities.">Historical Events</li>
+        </ul>
+    </div>
+
+    <!-- Anime Section -->
+    <div class="anime-section">
+        <h2>Anime</h2>
+        <p>Anime is a diverse and vibrant form of animation originating from Japan. It encompasses a wide range of genres and styles, including:</p>
+        <ul>
+            <li class="hover-pop" data-hover="Targeting young male audiences with action-packed stories and male protagonists.">Shonen</li>
+            <li class="hover-pop" data-hover="Catering to young female viewers with romantic plots, emotional narratives, and female leads.">Shojo</li>
+            <li class="hover-pop" data-hover="Appealing to adult men with mature themes, complex characters, and sophisticated storytelling.">Seinen</li>
+            <li class="hover-pop" data-hover="Geared towards adult women with realistic portrayals of relationships, career challenges, and personal growth.">Josei</li>
+            <li class="hover-pop" data-hover="Featuring giant robots, futuristic technology, and epic battles in sci-fi settings.">Mecha</li>
+            <li class="hover-pop" data-hover="Transporting viewers to magical realms, mythical worlds, and fantastical adventures.">Fantasy</li>
+        </ul>
+        <p>Anime captivates audiences worldwide with its unique art styles, rich storytelling, and cultural significance.</p>
+    </div>
+
+    <!-- Vision Section -->
+    <div class="vision-section">
+        <h2>Vision</h2>
+        <p>Our vision is to create a platform that celebrates the diversity and creativity of movies, dramas, and anime. We aim to provide a space where enthusiasts can explore, discover, and engage with their favorite media content. By fostering a community of passionate fans, we strive to promote appreciation for storytelling, visual arts, and cultural exchange.</p>
+    </div>
+</div>
+
+</body>
+</html>

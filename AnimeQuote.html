@@ -1,0 +1,80 @@
+<html lang="en-us">
+
+<head>
+  <!-- Essentials -->
+  <meta charset="UTF-8">
+  <title>Anime Quote Generator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="OIG.Ej_ins.jpg">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="/static/animeweb.css">
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <!-- Script -->
+  <script src="/static/script.js"></script>
+</head>
+
+<body>
+  <section class="main-header">
+    <h1>
+      Anime Quote Generator
+    </h1>
+    <h2>
+      This is a random anime quote generator that will generate random quotes from different anime series/movies.
+    </h2>
+
+    <div class="new-quote-button">
+      <button type="button" class="btn btn-default quote-masta">New Quote</button>
+    </div>
+  </section>
+
+  <section class="main-content">
+    <div class="quote-placeholder"><span class="sentence"></span>
+      <br><span class="author"></span><span class="title"></span></div>
+
+  </section>
+
+  <footer>
+    <p></p>
+  </footer>
+</body>
+<script>
+    // An array of background image URLs
+    const backgroundImages = [
+    'https://t3.ftcdn.net/jpg/03/08/13/12/360_F_308131267_unLRF2JmPsjjXgrMRaFA3aEnrKa9aUxK.jpg',
+        'https://i.pinimg.com/originals/c3/76/47/c37647d3cd724c0dc86a7db7627eaba5.jpg',
+        'https://i.pinimg.com/originals/80/7c/a1/807ca16b42e5fe7dc8a5794157076559.png',
+        'https://images7.alphacoders.com/611/thumbbig-611138.webp',
+        'https://images4.alphacoders.com/641/thumbbig-641968.webp',
+        'https://images2.alphacoders.com/742/thumbbig-742320.webp',
+
+        // Add more image URLs as needed
+    ];
+
+    let currentIndex = 0;
+
+    // Function to change the background image for both body and footer
+    function changeBackgroundImage() {
+        currentIndex = (currentIndex + 1) % backgroundImages.length;
+        const imageUrl = backgroundImages[currentIndex];
+        document.body.style.backgroundImage = `url('${imageUrl}')`;
+        document.querySelector('.footer').style.backgroundImage = `url('${imageUrl}')`;
+    }
+
+    // Call the function to start changing the background image every 2 seconds
+    setInterval(changeBackgroundImage, 4000);
+</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+</html>

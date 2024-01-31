@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anime GO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="stylesheet" href="/static/style.css">
+    <style>
+
+
+        *{
+
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        }
+
+        /* Custom CSS for carousel caption */
+
+        .carousel-caption {
+            background-color: rgba(246, 240, 240, 0.7); /* Adjust the last value (0.7) to control transparency */
+            color: rgb(20, 3, 3); /* Text color */
+            padding-right: 50px; /* Padding for the details */
+            text-align: center; /* Center-align text */
+        }
+        .carousel-item {
+            opacity: 0.7; /* Adjust the opacity value (0.7 for 70% transparency) */
+            transition: opacity 0.5s ease; /* Add a smooth transition effect */
+        }
+
+        /* Restore full opacity on hover (optional) */
+        .carousel-item:hover {
+            opacity: 1;
+        }
+
+        h1 {
+            font-size: 36px;
+            color: #FF5733; /* Custom text color */
+            text-align: center;
+        }
+
+        /* Customize the H2 heading for Season 2 */
+        h2 {
+            font-size: 24px;
+            color: #4CAF50; /* Custom text color */
+            text-align: center;
+        }
+
+        /* Customize the paragraph text */
+        p {
+            font-size: 18px;
+            color: white; /* Custom text color */
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* Adjust carousel images for responsiveness */
+        .carousel-item img {
+            max-width: 100%;
+            height: auto;
+        }
+        .carousel-control-prev,
+        .carousel-control-next {
+            border: 2px solid #FFFFFF; /* Add border to the arrows */
+            border-radius: 50%; /* Make the arrows circular */
+            width: 40px; /* Adjust the width of the arrows */
+            height: 40px; /* Adjust the height of the arrows */
+            background-color: black;
+            position: absolute;
+            top: 50%; /* Center vertically */
+            transform: translateY(-50%)
+            /* Semi-transparent background */
+
+        }
+
+        /* Customize the arrow icons */
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            color: #FFFFFF; /* Arrow icon color */
+        }
+        .card-img-top {
+        max-width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 767px) { /* Add styles for screens smaller than 768px (typical mobile devices) */
+        .card-img-top {
+            max-width: 50%; /* Adjust the image width for mobile devices */
+            height: auto;
+        }
+    }
+    body {
+            background-image: url('https://aniwatch.to/images/anw-min.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            background-color: #000;
+            color: white;
+        }
+
+        /* Header Styles */
+
+
+        header .container {
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        header h1 {
+            margin: 0;
+        }
+        .navbar {
+        background-color: rgba(0, 0, 0, 0); /* Change the background color of the navbar here */
+    }
+
+
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Add an overlay with reduced opacity for better text contrast */
+        body::after {
+            content: "";
+            background-color: rgba(0, 0, 0, 0.6); /* Adjust the opacity as needed */
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: -1; /* Place the overlay behind other content */
+        }
+        body {
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            background-color: #000;
+            color: white;
+            transition: background-image 2s ease-in-out; /* Add transition for smooth image change */
+        }
+        .footer {
+            background: transparent; /* Set the background to transparent */
+            color: white;
+            padding: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+    <!-- Navbar -->
+ <!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html">Anime Go</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="main.html" style="color: white;">Home</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color: white;">
+                        contact
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown" style="background-color: transparent;">
+
+                        <li><a class="dropdown-item" href="https://www.instagram.com/ajaychaudhari09/" style="color: white;">Instagram</a></li>
+
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="about.html" tabindex="-1" aria-disabled="true" style="color: white;">Animelist</a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+<!-- End Navbar -->
+
+    <!-- End Navbar -->
+
+    <br>
+
+    <!-- Carousel -->
+    <div class="container">
+        <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" >
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://static.bunnycdn.ru/i/cache/images/3/3f/3f7a34f05d6791a52fa735a4229caee2.jpg" class="d-block mx-auto" alt="Image not available">
+                    <div class="carousel-caption">
+                        <h1>JUJUTSU KAISEN</h1>
+                        <h2>Season 2</h2>
+                        <p>Second Season Of Jujutsu Kaisen</p>
+                        <a href="https://aniwatch.to/jujutsu-kaisen-tv-534"><button style="background-color: lightgreen; border-radius: 30px; padding: 10px;">Watch Now</button></a>                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://static.bunnycdn.ru/i/cache/images/5/58/5806a16f2892768b4930c39ebf6ce756.jpg" class="d-block mx-auto" alt="...">
+                    <div class="carousel-caption">
+                        <h1 style="color: coral;">ONE PIECE</h1>
+                        <p>Gol D. Roger, known as the Pirate King, was feared and respected for his incredible strength and prominence in the Grand Line.
+                                <a href="https://aniwatch.to/one-piece-100?ref=search">
+                                    <button style="background-color: pink; border-radius: 30px; padding: 10px;" >Watch Now</button>
+
+                                </a>
+
+
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://static.bunnycdn.ru/i/cache/images/4/49/494030f814a20cd8c04ab699038f0a2f.jpg" class="d-block mx-auto" alt="...">
+                    <div class="carousel-caption">
+                        <h1>TOKYO REVENGERS</h1>
+                        <p>Third Season of TOKYO REVENGERS</p>
+                        <a href="https://aniwatch.to/tokyo-revengers-uncensored-17874?ref=search">                        <button style="background-color:darkgrey; border-radius: 30px; padding: 10px;" >Watch Now</button>
+
+
+
+                        </a>
+
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="https://static.bunnycdn.ru/i/cache/images/9/9f/9f915991fd3de3c54746fd37da4b00bd.jpg" class="d-block mx-auto" alt="...">
+                    <div class="carousel-caption">
+                        <h1 style="color: blue;">THE KINGDOMS OF RUINS</h1>
+                        <p>Witches once blessed the human race with wisdom and peace.</p>
+                      <a href="https://aniwatch.to/the-last-naruto-the-movie-882?ref=search"><button style="background-color: orange; border-radius: 30px; padding: 10px;" >Watch Now</button></a>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden" >Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+    <!-- End Carousel -->
+
+    <br>
+    <br>
+
+
+
+    <!-- // ===================> Anime Domains <=================== -->
+    <h1 style="color: #e48807;padding-right: 700px;">Anime Domains</h1>
+
+
+
+
+    <!-- // ===================> Anime Domains <=================== -->
+
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Card 1 -->
+            <div class="col-md-1 mb-1">
+                <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                    <img src="https://aniwatch.to/images/logo.png"  class="card-img-top" alt="Card Image 1">
+
+                    <div class="card-body">
+                        <a href="https://aniwatch.to/tv" class="btn btn-primary">Lets go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 mb-1">
+                <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                    <img src="https://s2.bunnycdn.ru/assets/sites/zoro/logo.png"  class="card-img-top" alt="Card Image 1">
+
+                    <div class="card-body">
+                        <a href="https://zorox.to/home" class="btn btn-primary">Lets go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 mb-1">
+                <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                    <img src="https://s2.bunnycdn.ru/assets/sites/animesuge/logo.png"  class="card-img-top" alt="Card Image 1">
+
+                    <div class="card-body">
+                        <a href="https://animesuge.to/" class="btn btn-primary">Lets go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 mb-1">
+                <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                    <img src="https://yugenanime.tv/static/img/logo__light.png"  class="card-img-top" alt="Card Image 1">
+
+                    <div class="card-body">
+                        <a href="https://yugenanime.tv/" class="btn btn-primary">Lets go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 mb-1">
+                <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                    <img src="https://s2.bunnycdn.ru/assets/sites/anix/logo.png"  class="card-img-top" alt="Card Image 1">
+
+                    <div class="card-body">
+                        <a href="https://anix.to/home" class="btn btn-primary">Lets go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 mb-1">
+                <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                    <img src="https://archive.org/download/crunchyroll_202109/Crunchyroll.png"  class="card-img-top" alt="Card Image 1">
+
+                    <div class="card-body">
+                        <a href="https://www.crunchyroll.com/" class="btn btn-primary">Lets go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 mb-1">
+                <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                    <img src="https://anime8dao.com/wp-content/uploads/2023/04/111-1.png"  class="card-img-top" alt="Card Image 1">
+
+                    <div class="card-body">
+                        <a href="https://anime8dao.com/" class="btn btn-primary">Lets go</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-1 mb-1">
+                <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                    <img src="https://archive.org/download/tubi-tv/TubiTV.png"  class="card-img-top" alt="Card Image 1">
+
+                    <div class="card-body">
+                        <a href="https://tubitv.com/home/" class="btn btn-primary">Lets go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 mb-1">
+                <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                    <img src="https://9animes.ph/wp-content/uploads/2022/11/9animeph.webp"  class="card-img-top" alt="Card Image 1">
+
+                    <div class="card-body">
+                        <a href="https://9animes.ph/" class="btn btn-primary">Lets go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 mb-1">
+                <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                    <img src="https://archive.org/download/youtube-channel-angelique-rockas/Youtube%20Channel%20Angelique%20Rockas.png"  class="card-img-top" alt="Card Image 1">
+
+                    <div class="card-body">
+                        <a href="https://youtube.com/" class="btn btn-primary">Lets go</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1 mb-1">
+                <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                    <img src="https://wwv.animixplay.com.co/wp-content/uploads/2023/04/animixplay.ch_.webp"  class="card-img-top" alt="Card Image 1">
+
+                    <div class="card-body">
+                        <a href="https://wwv.animixplay.com.co/" class="btn btn-primary">Lets go</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-1 mb-1">
+                <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                    <img src="https://anilist.co/img/icons/icon.svg"  class="card-img-top" alt="Card Image 1">
+
+                    <div class="card-body">
+                        <a href="https://anilist.co/search/anime" class="btn btn-primary">Lets go</a>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Card 2 -->
+
+
+            <!-- Card 3 -->
+
+
+            <!-- Add more cards as needed -->
+        </div>
+    </div>
+
+    <!-- // ===================> Anime Domains ends <=================== -->
+
+
+<!-- // ===================> Manga Domains <=================== -->
+
+<h1 style="color: #e48807;padding-right: 700px;">Manga Domains</h1>
+
+<div class="container mt-5">
+    <div class="row">
+        <!-- Card 1 -->
+        <div class="col-md-1 mb-1">
+            <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                <img src="https://mangareader.to/images/logo.png"  class="card-img-top" alt="Card Image 1">
+
+                <div class="card-body">
+                    <a href="https://mangareader.to/" class="btn btn-primary">Lets go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 mb-1">
+            <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                <img src="https://comick.app/_next/image?url=%2Fstatic%2Ficons%2Funicorn-64.png&w=144&q=75"  class="card-img-top" alt="Card Image 1">
+
+                <div class="card-body">
+                    <a href="https://comick.app/" class="btn btn-primary">Lets go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 mb-1">
+            <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                <img src="https://asuratoon.com/wp-content/uploads/2021/03/Group_1.png"  class="card-img-top" alt="Card Image 1">
+
+                <div class="card-body">
+                    <a href="https://asuratoon.com/" class="btn btn-primary">Lets go</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-1 mb-1">
+            <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                <img src="https://9animes.ph/wp-content/uploads/2022/11/9animeph.webp"  class="card-img-top" alt="Card Image 1">
+
+                <div class="card-body">
+                    <a href="https://9animes.ph/" class="btn btn-primary">Lets go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 mb-1">
+            <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                <img src="https://kickassanime.am/img/logo.png"  class="card-img-top" alt="Card Image 1">
+
+                <div class="card-body">
+                    <a href="https://kickassanime.am/" class="btn btn-primary">Lets go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 mb-1">
+            <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                <img src="https://anime8dao.com/wp-content/uploads/2023/04/111-1.png"  class="card-img-top" alt="Card Image 1">
+
+                <div class="card-body">
+                    <a href="https://anime8dao.com/" class="btn btn-primary">Lets go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 mb-1">
+            <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                <img src="https://9animes.ph/wp-content/uploads/2022/11/9animeph.webp"  class="card-img-top" alt="Card Image 1">
+
+                <div class="card-body">
+                    <a href="https://9animes.ph/" class="btn btn-primary">Lets go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 mb-1">
+            <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                <img src="https://wwv.animixplay.com.co/wp-content/uploads/2023/04/animixplay.ch_.webp"  class="card-img-top" alt="Card Image 1">
+
+                <div class="card-body">
+                    <a href="https://wwv.animixplay.com.co/" class="btn btn-primary">Lets go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 mb-1">
+            <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                <img src="https://animepahe.ru/app/images/apdoesnthavelogotheysaidapistooplaintheysaid.svg"  class="card-img-top" alt="Card Image 1">
+
+                <div class="card-body">
+                    <a href="https://animepahe.ru/" class="btn btn-primary">Lets go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-1 mb-1">
+            <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+                <img src="https://anilist.co/img/icons/icon.svg"  class="card-img-top" alt="Card Image 1">
+
+                <div class="card-body">
+                    <a href="https://anilist.co/search/anime" class="btn btn-primary">Lets go</a>
+                </div>
+            </div>
+        </div>
+
+
+
+        <!-- Card 2 -->
+
+
+        <!-- Card 3 -->
+
+
+        <!-- Add more cards as needed -->
+    </div>
+</div>
+
+
+<!-- // ===================> Manga Domains <=================== -->
+</body>
+<footer >
+    <div class="container">
+        <p>&copy; 2024 Anime Go </p>
+        <p>Contact: kdrmafunhouse@gmail.com</p>
+        <p><a src="https://www.instagram.com/ajaychaudhari09/"></a></p>
+         <div class="col-md-1 mb-1">
+                <div class="card" style="background-color: rgba(0, 0, 0, 0);">
+
+                    <div class="card-body">
+                        <a href="https://www.instagram.com/ajaychaudhari09/" class="btn btn-primary">Lets go</a>
+                    </div>
+                </div>
+            </div>
+
+    </div>
+</footer>
+</footer>
+
+<script>
+    // An array of background image URLs
+    const backgroundImages = [
+    'https://t3.ftcdn.net/jpg/03/08/13/12/360_F_308131267_unLRF2JmPsjjXgrMRaFA3aEnrKa9aUxK.jpg',
+        'https://i.pinimg.com/originals/c3/76/47/c37647d3cd724c0dc86a7db7627eaba5.jpg',
+        'https://i.pinimg.com/originals/80/7c/a1/807ca16b42e5fe7dc8a5794157076559.png',
+        'https://images7.alphacoders.com/611/thumbbig-611138.webp',
+        'https://images4.alphacoders.com/641/thumbbig-641968.webp',
+        'https://images2.alphacoders.com/742/thumbbig-742320.webp',
+
+        // Add more image URLs as needed
+    ];
+
+    let currentIndex = 0;
+
+    // Function to change the background image for both body and footer
+    function changeBackgroundImage() {
+        currentIndex = (currentIndex + 1) % backgroundImages.length;
+        const imageUrl = backgroundImages[currentIndex];
+        document.body.style.backgroundImage = `url('${imageUrl}')`;
+        document.querySelector('.footer').style.backgroundImage = `url('${imageUrl}')`;
+    }
+
+    // Call the function to start changing the background image every 2 seconds
+    setInterval(changeBackgroundImage, 4000);
+</script>
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+</html>
